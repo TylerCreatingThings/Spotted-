@@ -1,0 +1,72 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/welcomeScreenLayout"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:weightSum="8">
+
+    <TextView
+        android:id="@+id/tvUniversity"
+        android:layout_width="match_parent"
+        android:layout_height="103dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="16dp"
+        android:autoSizeTextType="uniform"
+        android:fontFamily="ostrich_regular.ttf"
+        android:gravity="center"
+        android:text="@string/spotted"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/Spotted"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toTopOf="@+id/map"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="6"
+        app:layout_constraintBottom_toTopOf="@+id/ibRecycleView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvUniversity"
+        tools:context="ca.wlu.khan_fark_project.MapsActivity"/>
+
+    <ImageButton
+        android:id="@+id/ibCenterCamera"
+        android:layout_width="89dp"
+        android:layout_height="83dp"
+        android:layout_marginTop="8dp"
+        android:background="@null"
+        android:onClick="centerCamera"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/map" />
+
+
+    <ImageButton
+        android:id="@+id/ibRecycleView"
+        android:layout_width="85dp"
+        android:layout_height="84dp"
+        android:layout_marginStart="220dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:gravity="right"
+        android:onClick="showRecycleView"
+        android:scaleType="fitCenter"
+        android:src="@drawable/spottedmarker"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ibCenterCamera" />
+
+</android.support.constraint.ConstraintLayout>
+
